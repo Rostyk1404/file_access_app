@@ -1,0 +1,17 @@
+version: "3.5"
+services:
+
+  file_access:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    image: file_access_image:latest
+    ports:
+      - "8080:8080"
+    networks:
+      - file_access_network
+
+networks:
+  file_access_network:
+    driver: bridge
+    name: file_access_network
